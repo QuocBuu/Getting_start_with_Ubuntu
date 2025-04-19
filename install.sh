@@ -28,12 +28,36 @@ function install_git {
     # Install Git
     sudo apt update
     sudo apt install -y git
+# git config --global user.name "Name"
+# git config --global user.email "email" 
 }
 
-function install_makefile {
-    # Install make (part of build-essential)
+function install_make {
+    # Install make 
     sudo apt update
-    sudo apt install -y build-essential
+    sudo apt install make
+    sudo apt install cmake
+    sudo apt install tree
+    sudo apt-get install pkg-config
+    sudo apt-get install autoconf libtool automake
+    sudo apt install minicom
+    sudo apt install curl 
+    sudo apt install net-tools
+}
+
+function install_nfs {
+    sudo apt update
+    sudo apt install nfs-kernel-server
+    mkdir -p ~/NFS
+    echo "~/NFS 192.168.1.0/24(rw,sync,no_subtree_check)" >>/etc/exports
+}
+
+function install_library {
+    sudo apt update
+    sudo apt install gcc g++
+    sudo apt install libssl-dev
+    sudo apt install libmosquittopp-dev
+    sudo apt install libcurl4-openssl-dev
 }
 
 # Example usage:
@@ -42,3 +66,4 @@ upgrade
 install_vscode
 install_git
 install_makefile
+install_library
