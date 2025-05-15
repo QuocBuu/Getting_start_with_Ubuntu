@@ -34,30 +34,30 @@ function install_git {
 
 function install_make {
     # Install make 
-    sudo apt update
-    sudo apt install make
-    sudo apt install cmake
-    sudo apt install tree
-    sudo apt-get install pkg-config
-    sudo apt-get install autoconf libtool automake
-    sudo apt install minicom
-    sudo apt install curl 
-    sudo apt install net-tools
+    sudo apt update -y
+    sudo apt install make -y 
+    sudo apt install cmake -y
+    sudo apt install tree -y
+    sudo apt-get install pkg-config -y
+    sudo apt-get install autoconf libtool automake -y
+    sudo apt install minicom -y
+    sudo apt install curl -y
+    sudo apt install net-tools -y
 }
 
 function install_nfs {
-    sudo apt update
-    sudo apt install nfs-kernel-server
+    sudo apt update -y
+    sudo apt install nfs-kernel-server -y
     mkdir -p ~/NFS
     echo "~/NFS 192.168.1.0/24(rw,sync,no_subtree_check)" >>/etc/exports
 }
 
 function install_library {
     sudo apt update
-    sudo apt install gcc g++
-    sudo apt install libssl-dev
-    sudo apt install libmosquittopp-dev
-    sudo apt install libcurl4-openssl-dev
+    sudo apt install gcc g++ -y
+    sudo apt install libssl-dev -y
+    sudo apt install libmosquittopp-dev -y
+    sudo apt install libcurl4-openssl-dev -y
 }
 
 # Example usage:
